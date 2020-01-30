@@ -3,12 +3,10 @@ Build a web app using Python’s Flask and Google App Engine in Google Cloud Pla
 We will then push source code to Github.   Configure Cloud Build to Deploy Changes on build.  
 
 
-# Steps involved: 
-Create project in GCP: flask-gcp-helloflask.
-
-Flask app: Clone the hello world sample app repo. 
-
-Git. 
+# Steps involved 
+- Create project in GCP: flask-gcp-helloflask.
+- Flask app: Clone the hello world sample app repo. 
+- Git. 
 
 
 
