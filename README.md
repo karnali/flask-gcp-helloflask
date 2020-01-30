@@ -1,5 +1,5 @@
 # flask-gcp-helloflask
-Build a web app using Python’s Flask and Google App Engine in Google Cloud Platform (GCP) using GCP Cloud Shell environment.
+Continuous Delivery of Flask Application on Google Cloud Platform (GCP). Build a web app using Python’s Flask and Google App Engine in Google Cloud Platform (GCP) using GCP Cloud Shell environment.
 We will then push source code to Github.   Configure Cloud Build to Deploy Changes on build.  
 
 
