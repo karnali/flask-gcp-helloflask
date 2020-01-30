@@ -6,7 +6,7 @@ We will then push source code to Github.   Configure Cloud Build to Deploy Chang
 # Steps involved 
 - Create project in GCP: flask-gcp-helloflask.
 - Flask app: Clone the hello world sample app repo. 
-- Git. 
+- Github. 
 
 
 
