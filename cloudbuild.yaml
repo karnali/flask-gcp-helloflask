@@ -7,7 +7,7 @@ steps:
     'deploy', 
     'app.yaml',
     '--version=$BUILD_ID',
-    '--no-promote',
+    '--promote',
     '--quiet'
     ]
 # [END cloudbuild]
