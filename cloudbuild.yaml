@@ -1,18 +1,13 @@
 # [START cloudbuild]
 steps:
-- name: python:3.7
-  id: INSTALL
-  entrypoint: python3
-  args:
-  - '-m'
-  - 'pip'
-  - 'install'
-  - '-t'
-  - '.'
-  - '-r'
-  - 'requirements.txt'
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
-timeout: "1600s"
-images: ['gcr.io/$PROJECT_ID/pylint']
+- id: 'Deploy to Environment'
+  name: 'gcr.io/cloud-builders/gcloud'
+  args: [
+    'app', 
+    'deploy', 
+    'app.yaml',
+    '--version=$BUILD_ID',
+    '--no-promote',
+    '--quiet'
+    ]
 # [END cloudbuild]
