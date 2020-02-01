@@ -97,3 +97,106 @@ To avoid incurring charges, you can delete your Cloud project to stop billing fo
 3. In the dialog, type the project ID and then click Shut down to delete the project. 
 
 
+
+
+# GitHub Instructions!
+
+# Adding an existing project (local) to GitHub using the command line
+
+1. Create a new repository on GitHub.com. To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.
+
+2. Open Terminal Change the current working directory to your local project. config-globals.
+Set the username and email address for your Git commits. Replace [EMAIL_ADDRESS] with your Git email address. Replace [USERNAME] with your Git username.
+
+$ git config --global user.name "First Last"
+$ git config --global user.email "email@domain.com"
+
+3. Generate rsa key locally.
+$ ssh-keygen -t rsa
+$ cat /home/admin_/.ssh/id_rsa.pub 
+
+4. Copy .pub key and go to github and create SSH keys under settings.
+
+5. Create a new repository on the command line.  Add, commit, and push the files.
+$ echo "# flask-gcp-helloflask" >> README.md
+$ git init
+   Initialized empty Git repository in /home/admin_/python-docs-samples/appengine/standard_python37/hello_world/.git/
+$ git add README.md
+$ git commit -m "first commit"
+[master (root-commit) a6ed6b2] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git remote add origin git@github.com:karnali/flask-gcp-helloflask.git
+$ git push -u origin master
+   ****[You will see Permission denied (publickey) if you don't have ssh setup].***
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 231 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:karnali/flask-gcp-helloflask.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+
+6. add $ touch .gitignore locally copy paste .gitgnore from template
+
+7. Push all
+$ git add .
+$ git commit -m "First commit"
+$ git push -u origin master
+
+
+
+# push an existing repository from the command line
+git remote add origin git@github.com:karnali/flask-gcp-helloflask.git
+git push -u origin master
+
+
+# Pull command to ‘pull’ down the README file onto the local folder
+
+$ git pull origin master
+
+
+# Delete files/folder in your local clone, commit that change to your local repository, and then push that 
+change to the remote repository on GitHub.
+
+$ git rm -r deploy.yaml
+rm 'deploy.yaml'
+
+$ git commit -m "remove unwanted files/folder"
+[master 4140887] remove unwanted files/folder
+ 1 file changed, 4 deletions(-)
+ delete mode 100644 deploy.yaml
+
+$ git push origin master
+Counting objects: 2, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 235 bytes | 0 bytes/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:karnali/flask-gcp-helloflask.git
+   9b5d1dd..4140887  master -> master
+$ ls -l
+total 20
+-rw-r--r-- 1 admin_ admin_   18 Jan 30 13:37 app.yaml
+-rw-r--r-- 1 admin_ admin_  320 Jan 30 15:42 main.py
+-rw-r--r-- 1 admin_ admin_  380 Jan 30 15:28 README.md
+-rw-r--r-- 1 admin_ admin_   13 Jan 30 16:02 requirements.txt
+drwxr-xr-x 6 admin_ admin_ 4096 Jan 30 13:49 venv
+
+
+# If git pull from github fails
+$ git reset --hard
+$ git pull
+
+# Modify main.py watch Cloud Build auto trigger build while git commit!!!
+
+https://flask-gcp-helloflask.appspot.com/
+$ git add .
+$ git commit -m "build while git commit!!!"
+$ git push
+
+
+
