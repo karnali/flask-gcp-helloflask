@@ -10,7 +10,7 @@ We will then push source code to Github.   Configure Cloud Build to Deploy Chang
 
 # GCP
 1. Create Project in GCP - flask-gcp-helloflask  
-![Imgages](../master/images/Picture1.png?raw=true)
+![Image](../master/images/Picture1.png?raw=true)
 
 2. Activate cloud shell
 
@@ -18,7 +18,7 @@ We will then push source code to Github.   Configure Cloud Build to Deploy Chang
 $ gcloud config list project
 [core]
 project = flask-gcp-helloflask
-Your active configuration is: [cloudshell-3770]
+Your active configuration is:
 
 3. Describe Project
 $ gcloud projects describe $GOOGLE_CLOUD_PROJECT
@@ -54,15 +54,18 @@ $ pip install -r requirements.txt
 Successfully installed Flask-1.1.1 Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-0.16.1 click-7.0 itsdangerous-1.1.0
 
 10. Run flask locally in gcp shell
-$ python main.py
+$ python main.py  
+![Image](../master/images/Picture4.png?raw=true)  
 
 11. Deploy and run Hello World on App Engine
-$ gcloud app deploy
+$ gcloud app deploy  
+![Image](../master/images/Picture2.png?raw=true)  
 
 12. $ gcloud app browse
 https://flask-gcp-helloflask.appspot.com
 
-Congratulations! You've deployed your first Python 3.7 app to App Engine standard environment!
+Congratulations! You've deployed your first Python 3.7 app to App Engine standard environment!  
+![Image](../master/images/Picture5.png?raw=true)
 
 13. $ gcloud app instances list
 SERVICE  VERSION          ID                                                                      VM_STATUS  DEBUG_MODE
@@ -84,7 +87,8 @@ gcrDomain: us.gcr.io
 id: flask-gcp-helloflask
 locationId: us-east1
 name: apps/flask-gcp-helloflask
-servingStatus: SERVING
+servingStatus: SERVING  
+![Image](../master/images/Picture6.png?raw=true)  
 
 # Clean up
 To avoid incurring charges, you can delete your Cloud project to stop billing for all the resources used within that project.
