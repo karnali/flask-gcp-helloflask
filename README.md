@@ -10,7 +10,8 @@ We will then push source code to Github.   Configure Cloud Build to Deploy Chang
 
 # GCP
 1. Create Project in GCP - flask-gcp-helloflask
-![Image](../images/Picture1.png?raw=true)
+![Imgages](../master/images/Picture1.png?raw=true)
+
 2. Activate cloud shell
 
 3. List project
